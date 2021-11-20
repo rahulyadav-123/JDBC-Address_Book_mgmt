@@ -24,7 +24,7 @@ public class AddressBookTest {
 		public void givenContactUpdated_SyncWithDB() {
 			AddressBookService addressBookService = new AddressBookService();
 			addressBookService.readContactData(AddressBookService.IOService.DB_IO);
-			addressBookService.updatePersonInfo("Raju", "Maharashtra");
+			addressBookService.updatePersonInfo("Rahul", "Maharashtra");
 			boolean result = addressBookService.checkContactInSyncWithDB("Raju");
 			Assert.assertTrue(result);
 			System.out.println("UC-17 completed");
@@ -35,7 +35,7 @@ public class AddressBookTest {
 		public void givenContactWithinDateRange_MatchContactCount() {
 			AddressBookService addressBookService = new AddressBookService();
 			addressBookService.readContactData(AddressBookService.IOService.DB_IO);
-			LocalDate startDate = LocalDate.of(2017, 05, 20);
+			LocalDate startDate = LocalDate.of(2018, 05, 20);
 			LocalDate endDate = LocalDate.now();
 			List<PersonInformation> contactData = addressBookService.readContactForDateRange(AddressBookService.IOService.DB_IO, startDate, endDate);
 			Assert.assertEquals(2, contactData.size());
