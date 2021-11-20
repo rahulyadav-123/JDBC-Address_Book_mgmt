@@ -25,7 +25,7 @@ public class AddressBookTest {
 			AddressBookService addressBookService = new AddressBookService();
 			addressBookService.readContactData(AddressBookService.IOService.DB_IO);
 			addressBookService.updatePersonInfo("Rahul", "Maharashtra");
-			boolean result = addressBookService.checkContactInSyncWithDB("Raju");
+			boolean result = addressBookService.checkContactInSyncWithDB("Rahul");
 			Assert.assertTrue(result);
 			System.out.println("UC-17 completed");
 		}
